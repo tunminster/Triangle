@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle.WebApi", "Triangle.WebApi\Triangle.WebApi.csproj", "{249D0F26-8147-406A-B927-50C070E4D9E5}"
 EndProject
@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle.SharedKernel", "Tr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle.CustomerManagement.Core", "Triangle.CustomerManagement.Core\Triangle.CustomerManagement.Core.csproj", "{B940D106-9F1F-44CA-A591-938631DDA03E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle.Web", "Triangle.Web\Triangle.Web.csproj", "{2ACB0E62-957D-454C-9AFD-A55A33195125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle.Web", "Triangle.Web\Triangle.Web.csproj", "{2ACB0E62-957D-454C-9AFD-A55A33195125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D21F9B5-3C19-4753-B811-0A96F459220F}
 	EndGlobalSection
 EndGlobal

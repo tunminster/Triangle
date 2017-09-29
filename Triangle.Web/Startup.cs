@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -51,6 +52,10 @@ namespace Triangle.Web
             //services.AddIdentity<ApplicationUser, IdentityRole<int>>()
             //    .AddEntityFrameworkStores<ApplicationDbContext, int>();
 
+            // If you want to tweak Identity cookies, they're no longer part of IdentityOptions.
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
+           
+
             services.AddMvc();
 
             // Add application services.
@@ -77,7 +82,7 @@ namespace Triangle.Web
 
             app.UseStaticFiles();
 
-            app.UseIdentity();
+            app.UseAuthentication();
 
             RolesData.SeedRoles(roleManager).Wait();
 
