@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle.CustomerManagement
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle.Web", "Triangle.Web\Triangle.Web.csproj", "{2ACB0E62-957D-454C-9AFD-A55A33195125}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle.CustomerManagement.Data", "Triangle.CustomerManagement.Data\Triangle.CustomerManagement.Data.csproj", "{1027293F-506C-40C3-B8BF-69E25C6DE2D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2ACB0E62-957D-454C-9AFD-A55A33195125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ACB0E62-957D-454C-9AFD-A55A33195125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ACB0E62-957D-454C-9AFD-A55A33195125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1027293F-506C-40C3-B8BF-69E25C6DE2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1027293F-506C-40C3-B8BF-69E25C6DE2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1027293F-506C-40C3-B8BF-69E25C6DE2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1027293F-506C-40C3-B8BF-69E25C6DE2D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

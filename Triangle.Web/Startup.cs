@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Triangle.CustomerManagement.Data;
 using Triangle.Web.Data;
 using Triangle.Web.Models;
 using Triangle.Web.Services;
@@ -45,6 +46,9 @@ namespace Triangle.Web
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<CustomerManagementContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -54,7 +58,6 @@ namespace Triangle.Web
 
             // If you want to tweak Identity cookies, they're no longer part of IdentityOptions.
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
-           
 
             services.AddMvc();
 
