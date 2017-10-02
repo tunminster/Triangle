@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Model\ApplicationEvents\" />
+    <Folder Include="Model\Events\" />
+    <Folder Include="Model\ValueObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Triangle.SharedKernel\Triangle.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>
