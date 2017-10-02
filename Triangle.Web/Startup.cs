@@ -15,6 +15,10 @@ using Triangle.CustomerManagement.Data;
 using Triangle.Web.Data;
 using Triangle.Web.Models;
 using Triangle.Web.Services;
+using Triangle.Web.App_Start;
+using Triangle.UserManagement.Core.Interfaces;
+using Triangle.UserManagement.Data.Repositories;
+using Triangle.UserManagement.Data;
 
 namespace Triangle.Web
 {
@@ -35,6 +39,8 @@ namespace Triangle.Web
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            AutomapperConfig.Configure();
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -49,9 +55,12 @@ namespace Triangle.Web
             services.AddDbContext<CustomerManagementContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            
 
             //services.AddIdentity<ApplicationUser, IdentityRole<int>>()
             //    .AddEntityFrameworkStores<ApplicationDbContext, int>();
@@ -64,6 +73,12 @@ namespace Triangle.Web
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            services.AddScoped<IUserManagementContext, UserManagementContext>();
+            services.AddScoped<IUserRepository, UserRepository>();
+                
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,7 +102,7 @@ namespace Triangle.Web
 
             app.UseAuthentication();
 
-            RolesData.SeedRoles(roleManager).Wait();
+            //RolesData.SeedRoles(roleManager).Wait();
 
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715

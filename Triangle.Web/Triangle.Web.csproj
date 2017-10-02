@@ -13,6 +13,7 @@
     <AssemblyName>Triangle.Web</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.0.0" />
@@ -35,6 +36,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Triangle.CustomerManagement.Data\Triangle.CustomerManagement.Data.csproj" />
+    <ProjectReference Include="..\Triangle.UserManagement.Core\Triangle.UserManagement.Core.csproj" />
+    <ProjectReference Include="..\Triangle.UserManagement.Data\Triangle.UserManagement.Data.csproj" />
   </ItemGroup>
 
 </Project>

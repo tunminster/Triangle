@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Xml;
-using Triangle.SharedKernel;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Triangle.UserManagement.Core.Model.UserAggregate
+namespace Triangle.Web.Models.UserManagementModels
 {
-    public class User 
+    public class UserViewModel
     {
-        public User() { }
-
         public int Id { get; set; }
         public string Title { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Added { get; set; }
-        public DateTime Updated { get; set; }
     }
 }

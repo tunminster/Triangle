@@ -1,0 +1,37 @@
+﻿@model List<Triangle.Web.Models.UserManagementModels.UserViewModel>
+
+@{
+    ViewData["Title"] = "User List | Triangle";
+}
+
+<h2>User Management</h2>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Tilte</th>
+                <th>Name</th>
+                <th>Member Since</th>
+                <th>Action</th>
+            </tr>
+
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.FirstName  @item.LastName</td>
+                    <td>@item.Added</td>
+                    <td><a href="/">Edit</a> | <a href="/">Delete</a> </td>
+                </tr>
+
+            }
+
+        </table>
+
+    </div>
+</div>
+
