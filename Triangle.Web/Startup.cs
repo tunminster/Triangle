@@ -55,6 +55,18 @@ namespace Triangle.Web
             services.AddDbContext<CustomerManagementContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<UserManagementContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IUserManagementContext, UserManagementContext>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            //services.AddScoped<IUserRepository, UserRepository>((ctx) =>
+            //    {
+            //        IUserManagementContext context = ctx.GetService<IUserManagementContext>();
+            //        return new UserRepository(context);
+            //    }
+            //);
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -74,8 +86,13 @@ namespace Triangle.Web
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
 
-            services.AddScoped<IUserManagementContext, UserManagementContext>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            //services.AddScoped<IUserManagementContext, UserManagementContext>();
+            //services.AddScoped<IUserRepository, UserRepository>((ctx) =>
+            //    {
+            //        IUserManagementContext context = ctx.GetService<IUserManagementContext>();
+            //        return new UserRepository(context);
+            //    }
+            //);
                 
 
 
