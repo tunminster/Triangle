@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Add User | Triangle";
+}
+
+<h2>Add User</h2>
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        @using (Html.BeginForm("add", "usermanagement", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="Title" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" id="firstName" name="FirstName" placeholder="First Name">
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="LastName" placeholder="Last Name">
+            </div>
+
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+    </div>
+
+</div>
+
