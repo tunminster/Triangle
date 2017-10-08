@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ServiceBus.Messaging;
+using System;
 //using Microsoft.Azure.ServiceBus;
 
 
@@ -11,9 +12,11 @@ namespace Triangle.MessageHandler.WS
             var connectionString = "Endpoint=sb://<your namespace>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<your key>"; ;
             var topicName = "<your topic name>";
 
-            //var client = SubscriptionClient.CreateFromConnectionString(connectionString, topicName, "<your subscription name>");
+            var client = SubscriptionClient.CreateFromConnectionString(connectionString, topicName, "<your subscription name>");
 
             Console.WriteLine("Hello World!");
+
+            //var friend = Acto
         }
     }
 }
